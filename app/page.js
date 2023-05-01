@@ -1,113 +1,77 @@
-import Image from 'next/image'
+"use client"
+
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
+  const gotoTodoClickHandle = () => {
+    router.push('/todos')
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
+      <h1>About me</h1>
+      <br/>
+      Hello, I am ARAKI YAMAZAKI(John Henry)
+      <br/>
+      <p>John Henry<br/>
+        Hong Kong | topstar991122@gmail.com | https://pro-top-star.firebaseapp.com<br/>
+        <br/>
+        SUMMARY<br/>
+        A senior full stack web developer looking to step up in the creative industry<br/>
+        Experienced Full Stack Web Developer with extensive knowledge in Frontend and Backend development, including HTML, CSS, JavaScript, React, Vue.js, Node, MongoDB, MySQL, Laravel, and WordPress. Proven ability to design system architecture and lead teams in business systems. Strong problem-solving skills and able to solve complex technical challenges. Experienced in customer management and working with clients of varying skill levels.
+        <br/><br/>
+        PROFESSIONAL EXPERIENCE<br/>
+        Full stack developer	Sep 2022 - Present<br/>
+        Freelancer, Hong Kong<br/>
+        - Develop high-quality, scalable web applications using HTML, CSS, JavaScript, React, Vue.js, Next, Node, MongoDB, MySQL, Laravel, and WordPress.
+        - Collaborate with clients to understand their business requirements and develop effective solutions.<br/>
+        - Work with a wide range of clients and manage projects from start to finish.<br/>
+        - Provide technical guidance and support to clients of varying skill levels. <br/>
+        - Improve web application performance by 40% through optimized database queries and implementing caching strategies. <br/>
+        - Collaborate with cross-functional teams to increase efficiency and decrease development time.<br/>
+        - My personality and competitive nature have made me realize that my skills will be beneficial in dealing with clients in sales.<br/>
+
+        <br/>
+        Project manager	Aug 2021 - Aug 2022<br/>
+        Victor team, Singapore<br/>
+        - Designed scalable and optimized web applications using Next, Node, and MongoDB.<br/>
+        - Led a team of developers to ensure timely delivery of projects by managing schedules, budgets, and resources.<br/>
+        - Managed a team of developers and provided training and mentor-ship to improve their technical skills.<br/>
+        - Created RESTful APIs for the web applications to enhance user experience and functionality.<br/>
+        - Developed and implemented coding standards and best practices for the team.<br/>
+        - Negotiated deadlines and resources with stakeholders to ensure successful project delivery.<br/>
+        - Increased revenue by launching new features and improving existing ones.<br/>
+        - Collaborated with UX/UI Designers and Product Managers to create modern, user-centered web applications.<br/>
+        - Conducted code reviews and provided technical guidance to team members.<br/>
+        - Implemented Agile/Scrum methodology to manage project timelines and sprints.<br/><br/>
+
+        Front end developer	Aug 2017 - July 2021<br/>
+        Fora Soft Company, Hong Kong<br/>
+        - Worked as an intern, gained experience in HTML, CSS, and JavaScript at start.<br/>
+        - Contributed to various web development projects, improving my coding skills and knowledge.<br/>
+        - Developed complex web applications using HTML, CSS, JavaScript, React, Vue.js, Node, MongoDB, MySQL, Laravel, and WordPress.<br/>
+        - Led a team of 5 developers in planning, developing, and delivering web applications.<br/>
+        - Designed and implemented REST APIs using Node.js and Express.js.<br/>
+        - Led a team of developers and trained/mentored junior members to improve their technical skills.<br/>
+        - Volunteered as a mentor to local coding boot-camps, sharing my knowledge and experience with aspiring developers.<br/>
+        - Increased revenue by launching new features and improving existing ones while being under budget constraints.<br/>
+        - Optimized website performance, including page speed and scalability.<br/><br/>
+
+        EDUCATION<br/>
+        Bachelor of Science in Computer Science - Computer Sciences	Sep 2013 - May 2017<br/>
+        The University of Hong Kong, Hong Kong<br/>
+        GPA: 3.85/4.0<br/><br/>
+
+        SKILLS<br/>
+        Expert in: HTML, CSS, SCSS, JavaScript, ES6, TypeScript, Node, React.js, React-Native, React Hook, Vue.js, Next.js, Express.js, MongoDB, MySQL, Python, Django, Shopify, PHP, Laravel, WordPress, AWS, Firebase, CMS, Flutter, Git, Docker, Jira UniTesting, Figma, Adobe Illustrator, Adobe XD, 
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <button  onClick={() => gotoTodoClickHandle()}
+        type="button" className="mt-32 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+        Go to TODO
+      </button>
     </main>
   )
 }

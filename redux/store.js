@@ -1,16 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./features/counterSlice";
+import { useDispatch , useSelector  } from 'react-redux';
+import todoReducer from "./slices/todoSlice";
 
-export const store = configureStore({
+
+const store = configureStore({
   reducer: {
-    counterReducer,
-    // [userApi.reducerPath]: userApi.reducer,
+    todos: todoReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({})
 });
 
-// setupListeners(store.dispatch);
 
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
+const { dispatch } = store;
+
+export {store, dispatch, useSelector, useDispatch};
