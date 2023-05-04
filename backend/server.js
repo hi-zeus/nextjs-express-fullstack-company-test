@@ -1,7 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const todo =  require('./routes/todo');
+const todoRoute =  require('./routes/todoRoute');
 const bodyParser = require("body-parser");
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(cors());
 
 connectDB();
 
-app.use('/todos', todo);
+app.use('/todos', todoRoute);
 
 
 const PORT = process.env.PORT || 5000;
