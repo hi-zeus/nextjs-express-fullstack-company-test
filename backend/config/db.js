@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
-const dbURL = "mongodb://localhost:27017/mail-service"
+const dbURL = "mongodb://127.0.0.1:27017/mail-service"
 
 const connectDB = async () => {
     try {
+        console.log("preparing to connect database......")
         await mongoose.connect(dbURL, {
             useNewUrlParser: true,
-            useCreateIndex: true,
             useUnifiedTopology: true,
         });
 
-        console.log('MongoDB connected...');
+        console.log('MongoDB connected successfully');
     } catch (err) {
         console.error(err.message); 
     }

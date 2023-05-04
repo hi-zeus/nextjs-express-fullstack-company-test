@@ -57,9 +57,11 @@ module.exports = {
     },
     updateById: async (req, res) => {
         try {
+            const { title, status } = req.body;
+
             const todo = await Todo.findOne({ _id: req.params.todo_id });
-            todo.title = req.body.title;
-            todo.status = req.body.status;
+            todo.title = title;
+            todo.status = status;
     
             await todo.save();
 
@@ -71,14 +73,15 @@ module.exports = {
     
     // other functions //////////////////////////////////////////////////////////////////////////////////
     searchByKeyword: async (req, res) => {
-        let { keyword } = req.body;
 
         try{
+            let { keyword } = req.body;
+            // can't use search function for number.
             const todos = await Todo.find({
                 $or: [
                     { title: { $regex: `.*${keyword}.*`, $options: 'i' } },
-                    { status: { $regex: `.*${keyword}.*`, $options: 'i' } }
-                  ]
+                    { id: { $regex: `.*${keyword}.*`, $options: 'i' } } 
+                ]
             });
 
             return res.json({ todos : todos });
@@ -89,11 +92,12 @@ module.exports = {
 
     deleteMany: async (req, res) => {
         try{
-            // const {ids} = req.body;
-            // await Todo.deleteMany({  _id: {$in: ids} });
+            const {ids} = req.body;
+            
+            await Todo.deleteMany({  _id: {$in: ids} });
 
-            const {status} = req.body;
-            await Todo.deleteMany({ status: status });
+            // const {status} = req.body;
+            // await Todo.deleteMany({ status: status });
 
             return res.json({ msg : "Deleted successfully" });
         } catch (err) {
@@ -103,12 +107,22 @@ module.exports = {
 
     updateMany: async (req, res) => {
         try{
-            const { oldStatus, newStatus } = req.body;
+            
+            const { ids, newStatus } = req.body;
 
-            // condition, updated content
-            await Todo.updateMany({ status: oldStatus }, { status: newStatus });
+            const result = await Todo.updateMany({ _id: {$in : ids} }, { status: newStatus });
 
-            return res.json({ msg : "Deleted successfully" });            
+            // const { oldStatus, newStatus } = req.body;
+
+            // // condition, updated content
+            // const result = await Todo.updateMany({ status: oldStatus }, { status: newStatus });
+            
+            if(result.nModified > 0) {
+                return res.json({ msg : `Updated to ${newStatus} successfully` });  
+            } else {    
+                return res.json({ msg : `Nothing anything to be updated` });  
+            }
+          
         } catch (err) {
             return res.status(500).json({msg: 'Server Error'});
         }

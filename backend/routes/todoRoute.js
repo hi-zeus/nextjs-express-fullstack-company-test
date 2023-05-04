@@ -76,9 +76,7 @@ router
     .put('/:todo_id', todoController.updateById)
     .delete('/:todo_id', todoController.deleteById)
     .post('/deletemany', todoController.deleteMany)
-    .put('/updatemany', todoController.updateMany)
+    .post('/updatemany', todoController.updateMany)
     .post('/search', todoController.searchByKeyword)
-    
-
 
 module.exports = router;
